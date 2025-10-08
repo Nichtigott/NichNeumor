@@ -1,4 +1,5 @@
 # Obsidian NichNeumor Theme
+[English](README.md) • [简体中文](README_zh.md)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Style-Skeuomorphic%20Design-D08770?style=for-the-badge" alt="Style">
