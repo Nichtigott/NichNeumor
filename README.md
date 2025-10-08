@@ -7,6 +7,10 @@
   <img src="https://img.shields.io/badge/Plugins-Fully%20Compatible-EBCB8B?style=for-the-badge" alt="Plugins">
 </p>
 
+![light_theme](./Picture/swappy-20251008_234102.png)
+
+![dark_theme](./Picture/swappy-20251008_234239.png)
+
 ## Theme Features
 
 ### 🎨 Skeuomorphic Visual Design
@@ -48,12 +52,21 @@ Add to your note's frontmatter properties:
 ### Image Floating Layout
 Use extended syntax to control image position and size:
 
+```Markdown
+![img.png|left&center&right|300(You can set the size)]
+```
+
 ### Basic Markdown Syntax Support
 The theme fully supports all standard Markdown syntax elements:
 - **Text Styles**: Bold, italic, highlight, strikethrough, etc.
 - **List Systems**: Ordered lists, unordered lists, todo lists
-- **Table Support**: Left-aligned, right-aligned, center-aligned tables
+- **Header-aligned Support**: Left-aligned, right-aligned, center-aligned headers
+
+![](./Picture/swappy-20251009_000317.png)
+
 - **Code Highlighting**: Fine-tuned Nord color scheme
+
+![](./Picture/swappy-20251008_234204.png)
 
 ## Technical Features
 
@@ -76,4 +89,12 @@ Welcome to submit issues or feature suggestions via GitHub to help improve this 
 
 Your every donation guarantees the next meal for the little raccoon | Thank you! | Vielen Dank! | Grazie! | ありがとうございます！ | 감사합니다!
 
-Alipay | WeChat | PayPal: paypal.me/nichtigott
+Alipay
+
+<img src="./Picture/alipay.png" width="300">
+
+wechat
+
+<img src="./Picture/wechat.png" width="300">
+
+paypal: [check](https://www.paypal.com/paypalme/nichtigott)
