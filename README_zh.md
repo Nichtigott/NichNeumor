@@ -7,6 +7,9 @@
   <img src="https://img.shields.io/badge/插件-全面兼容-EBCB8B?style=for-the-badge" alt="插件">
 </p>
 
+!(浅色模式)[Picture/swappy-20251008_234102]
+!(深色模式)[Picture/swappy-20251008_234239]
+
 ## 主题特色 / Theme Features
 
 ### 🎨 拟物化视觉设计 / Skeuomorphic Visual Design
@@ -47,12 +50,21 @@
 ### 图片浮动排版 / Image Floating Layout
 使用扩展语法控制图片位置和大小：
 
+```Markdown
+![img.png|left&center&right|300(You can set the size)]
+```
+
 ### Markdown 基础语法支持 / Basic Markdown Syntax Support
 主题完美支持所有标准Markdown语法元素：
 - **文本样式**：粗体、斜体、高亮、删除线等
 - **列表系统**：有序列表、无序列表、待办事项
-- **表格支持**：左对齐、右对齐、居中对齐表格
+- **标题对齐支持**：左对齐、右对齐、居中对齐标题
+
+!()[Picture/swappy-20251009_000317]
+
 - **代码高亮**：精调过的nord颜色方案
+
+!()[Picture/swappy-20251008_234204]
 
 ## 技术特性 / Technical Features
 
@@ -77,6 +89,12 @@
 
 您的每一次捐赠都是小浣熊下一顿的保障 | 谢谢！| Thank you！| Vielen Dank! | Grazie！| ありがとうございます！| 감사합니다！
 
-Alipay 
+Alipay
+
+![[Picture/alipay.png]] 
+
 wechat
-paypal:paypal.me/nichtigott
+
+![[Picture/wechat.png]]
+
+paypal: [paypal.me/nichtigott]
