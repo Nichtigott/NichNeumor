@@ -8,7 +8,7 @@
 </p>
 
 ![浅色模式](./Picture/swappy-20251008_234102.png)
-![深色模式][./Picture/swappy-20251008_234239.png]
+![深色模式](./Picture/swappy-20251008_234239.png)
 
 ## 主题特色 / Theme Features
 
@@ -91,10 +91,10 @@
 
 Alipay
 
-![](./Picture/alipay.png)
+![](./Picture/alipay.png =x300)
 
 wechat
 
-![](./Picture/wechat.png)
+![](./Picture/wechat.png =x300)
 
 paypal: [paypal.me/nichtigott]
