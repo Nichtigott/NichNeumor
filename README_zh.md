@@ -91,10 +91,10 @@
 
 Alipay
 
-![](./Picture/alipay.png =x300)
+<img src="./Picture/alipay.png" width="300">
 
 wechat
 
-![](./Picture/wechat.png =x300)
+<img src="./Picture/wechat.png" width="300">
 
-paypal: [paypal.me/nichtigott]
+paypal: !(paypal.me/nichtigott)
