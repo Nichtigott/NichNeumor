@@ -74,7 +74,7 @@
 *让笔记写作成为一种享受，NichNeumor主题为您打造极致的专注体验*  
 *Make note-taking a delight with NichNeumor's ultimate focus experience*
 
-您的每一次捐赠都是小浣熊下一顿的保障 | 谢谢！| Thank you！| Vielen Dank! ​​| Grazie！| ありがとうございます！ |	감사합니다！
+您的每一次捐赠都是小浣熊下一顿的保障 | 谢谢！| Thank you！| Vielen Dank! | Grazie！| ありがとうございます！| 감사합니다！
 
 Alipay 
 wechat

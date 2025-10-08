@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Obsidian NichNeumor Theme
 
 <p align="center">
