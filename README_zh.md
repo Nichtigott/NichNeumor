@@ -7,7 +7,10 @@
   <img src="https://img.shields.io/badge/插件-全面兼容-EBCB8B?style=for-the-badge" alt="插件">
 </p>
 
+- light theme
 ![浅色模式](./Picture/swappy-20251008_234102.png)
+
+- dark theme
 ![深色模式](./Picture/swappy-20251008_234239.png)
 
 ## 主题特色 / Theme Features

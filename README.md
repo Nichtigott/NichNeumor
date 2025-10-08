@@ -7,8 +7,10 @@
   <img src="https://img.shields.io/badge/Plugins-Fully%20Compatible-EBCB8B?style=for-the-badge" alt="Plugins">
 </p>
 
+- light theme
 ![light_theme](./Picture/swappy-20251008_234102.png)
 
+- dark theme
 ![dark_theme](./Picture/swappy-20251008_234239.png)
 
 ## Theme Features
