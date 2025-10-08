@@ -8,7 +8,7 @@
 </p>
 
 ![浅色模式](./Picture/swappy-20251008_234102.png)
-!(深色模式)[Picture/swappy-20251008_234239]
+![深色模式][./Picture/swappy-20251008_234239.png]
 
 ## 主题特色 / Theme Features
 
@@ -60,11 +60,11 @@
 - **列表系统**：有序列表、无序列表、待办事项
 - **标题对齐支持**：左对齐、右对齐、居中对齐标题
 
-!()[Picture/swappy-20251009_000317]
+![](./Picture/swappy-20251009_000317.png)
 
 - **代码高亮**：精调过的nord颜色方案
 
-!()[Picture/swappy-20251008_234204]
+![](./Picture/swappy-20251008_234204.png)
 
 ## 技术特性 / Technical Features
 
@@ -91,10 +91,10 @@
 
 Alipay
 
-![[Picture/alipay.png]] 
+![](./Picture/alipay.png)
 
 wechat
 
-![[Picture/wechat.png]]
+![](./Picture/wechat.png)
 
 paypal: [paypal.me/nichtigott]
