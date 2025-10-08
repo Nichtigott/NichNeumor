@@ -97,4 +97,4 @@ wechat
 
 <img src="./Picture/wechat.png" width="300">
 
-paypal: !(paypal.me/nichtigott)
+paypal: ![check](https://www.paypal.com/paypalme/nichtigott)
