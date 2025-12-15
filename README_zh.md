@@ -1,4 +1,4 @@
-# Obsidian NichNeumor Theme / Obsidian NichNeumor 主题
+# NichNeumor Theme / NichNeumor 主题
 [English](README.md) • [简体中文](README_zh.md)
 
 <p align="center">
