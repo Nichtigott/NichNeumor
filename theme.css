@@ -1655,6 +1655,35 @@ body.is-popout-modal .modal.mod-settings .vertical-tab-content {
     border-end-end-radius: var(--border-radius) !important;
 }
 
+/* unify every surface inside the settings window to the page background */
+body.is-popout-window {
+    background-color: var(--background) !important;
+}
+
+.modal.mod-settings {
+    --settings-background: var(--background);
+    --modal-background: var(--background);
+    --background-primary: var(--background);
+    --background-primary-alt: var(--background);
+    --background-secondary: var(--background);
+    --background-secondary-alt: var(--background);
+}
+
+body.is-popout-window .modal.mod-settings,
+body.is-popout-window .modal.mod-settings .modal-content,
+body.is-popout-window .modal.mod-settings .vertical-tabs-container,
+body.is-popout-window .modal.mod-settings .vertical-tab-content-container,
+body.is-popout-window .modal.mod-settings .vertical-tab-content,
+body.is-popout-window .modal.mod-settings .vertical-tab-header,
+body.is-popout-window .modal.mod-settings .setting-group,
+body.is-popout-window .modal.mod-settings .setting-items,
+body.is-popout-window .modal.mod-settings .setting-item,
+body.is-popout-window .modal.mod-settings .style-settings-container,
+body.is-popout-window .modal.mod-settings .nav-header,
+body.is-popout-window .modal.mod-settings .setting-search-container {
+    background-color: var(--background) !important;
+}
+
 /* other modals opened in their own window (e.g. community plugins) */
 body.is-popout-modal .modal {
     background-color: var(--background) !important;
