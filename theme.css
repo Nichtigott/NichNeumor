@@ -536,7 +536,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 }
 
 .excalidraw .color-picker__button {
-    box-shadow: var(--button-box-shadow-excalidraw) !important;
+    box-shadow: var(--button-box-shadow) !important;
     border-radius: 10px !important;
     margin: 5px 5px 5px 5px !important;
 }
@@ -1346,14 +1346,20 @@ div[class^="div-scrollTo"] {
 
 /* settings opened in its own window (Obsidian 1.14 default) */
 body.is-popout-modal .modal.mod-settings.mod-sidebar-layout {
-    padding: var(--gap) !important;
+    padding: 0 !important;
     background-color: var(--background) !important;
 }
 
 body.is-popout-modal .modal.mod-settings .modal-content {
     box-shadow: none !important;
     border-radius: 0 !important;
+    padding: var(--gap) !important;
     gap: var(--gap);
+}
+
+body.is-popout-window .titlebar {
+    background-color: var(--background) !important;
+    border-bottom: none !important;
 }
 
 body.is-popout-modal .modal.mod-settings .vertical-tab-header {
@@ -1400,4 +1406,27 @@ body.is-popout-modal .modal {
 body.is-popout-modal .modal.mod-sidebar-layout .modal-content {
     box-shadow: none !important;
     border-radius: 0 !important;
+}
+
+/* === Obsidian 1.14 sidebar tab buttons === */
+
+.workspace-split.mod-horizontal.mod-sidedock .workspace-tab-header-container .workspace-tab-header {
+    border-radius: var(--border-radius) !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+}
+
+.workspace-split.mod-horizontal.mod-sidedock .workspace-tab-header-container .workspace-tab-header .workspace-tab-header-inner {
+    margin: 0 !important;
+    height: 100% !important;
+    border-radius: var(--border-radius) !important;
+    background-color: transparent !important;
+}
+
+.workspace-split.mod-horizontal.mod-sidedock .workspace-tab-header-container .workspace-tab-header:hover .workspace-tab-header-inner,
+.workspace-split.mod-horizontal.mod-sidedock .workspace-tab-header-container .workspace-tab-header.is-active .workspace-tab-header-inner {
+    background-color: var(--background-modifier-hover) !important;
+    box-shadow: inset 3px 3px 7px light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
+                inset -3px -3px 7px light-dark(var(--light-shadow-second), var(--dark-shadow-second)) !important;
 }
