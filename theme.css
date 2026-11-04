@@ -1430,3 +1430,20 @@ body.is-popout-modal .modal.mod-sidebar-layout .modal-content {
     box-shadow: inset 3px 3px 7px light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
                 inset -3px -3px 7px light-dark(var(--light-shadow-second), var(--dark-shadow-second)) !important;
 }
+
+/* Excalidraw side toolbar buttons: rounded corners + inset hover */
+.excalidraw .mobile-misc-tools-container .default-sidebar-trigger {
+    border-radius: var(--border-radius) !important;
+}
+
+.excalidraw .mobile-misc-tools-container .default-sidebar-trigger:hover {
+    box-shadow: inset 3px 3px 7px light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
+                inset -3px -3px 7px light-dark(var(--light-shadow-second), var(--dark-shadow-second)) !important;
+}
+
+/* keep the invisible Excalidraw label button from inheriting the global button shadow */
+.excalidraw .sidebar-trigger__label-element {
+    box-shadow: none !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+}
