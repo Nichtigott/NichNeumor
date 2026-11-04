@@ -279,6 +279,10 @@ input.metadata-property-key-input:focus {
     border-radius: var(--border-radius) ! important;
 }
 
+.excalidraw-search .search-input-container.document-search-input {
+    box-shadow: var(--box-shadow) !important;
+}
+
 .nav-file-title.is-active {
     box-shadow: var(--box-shadow) !important;
     text-shadow: var(--printing-text-shadow) !important;
@@ -533,6 +537,8 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 
 .excalidraw .color-picker__button {
     box-shadow: var(--button-box-shadow-excalidraw) !important;
+    border-radius: 10px !important;
+    margin: 5px 5px 5px 5px !important;
 }
 
 .excalidraw .color-picker__input-label {
@@ -1067,12 +1073,14 @@ hr:not(.cm-editor hr) {
 }
 
 .workspace-ribbon.mod-left:before,
+.workspace-ribbon.mod-primary:before,
 .side-dock-settings {
     display: none !important;
 }
 
 .mod-left-split .mod-top-left-space .workspace-tab-header-container,
 .workspace-ribbon.side-dock-ribbon.mod-left,
+.workspace-ribbon.side-dock-ribbon.mod-primary,
 .workspace-tab-header-container-inner,
 .workspace-sidedock-vault-profile {
     border: none !important;
@@ -1087,6 +1095,7 @@ body:not(.mod-macos) .sidebar-toggle-button.mod-left,
 .workspace-split.mod-vertical.mod-root,
 .mod-left-split .mod-top-left-space .workspace-tab-header-container,
 .workspace-ribbon.side-dock-ribbon.mod-left,
+.workspace-ribbon.side-dock-ribbon.mod-primary,
 .workspace-sidedock-vault-profile,
 .workspace-split.mod-horizontal.mod-sidedock.mod-right-split,
 .mod-left-split .mod-top-left-space .workspace-tab-container .workspace-leaf {
@@ -1136,7 +1145,8 @@ body:not(.mod-macos) .sidebar-toggle-button.mod-left,
     margin-block-start: var(--gap);
 }
 
-.workspace-ribbon.mod-left {
+.workspace-ribbon.mod-left,
+.workspace-ribbon.mod-primary {
     margin-block-start: calc(var(--header-height) + (var(--gap) * 2));
 }
 
@@ -1147,6 +1157,7 @@ body:not(.mod-macos) .sidebar-toggle-button.mod-left,
 }
 
 .workspace-ribbon.mod-left,
+.workspace-ribbon.mod-primary,
 .workspace-sidedock-vault-profile {
     margin-block-end: var(--gap);
 }
@@ -1162,6 +1173,7 @@ body:not(.mod-macos) .sidebar-toggle-button.mod-left,
 }
 
 .workspace-ribbon.mod-left,
+.workspace-ribbon.mod-primary,
 .sidebar-toggle-button.mod-left,
 body:not(.show-ribbon) .workspace-split.mod-horizontal.mod-sidedock.mod-left-split,
 body:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .workspace-split.mod-vertical.mod-root,
@@ -1318,4 +1330,74 @@ div[class^="div-scrollTo"] {
 
 .mod-windows .workspace-split.mod-vertical.mod-root .workspace-tabs.mod-active.mod-top.mod-top-right-space .workspace-tab-header-container {
     padding-inline-end: calc(var(--size-4-2) + var(--frame-right-space)) !important;
+}
+
+/* === Obsidian 1.14+ setting window === */
+
+/* design tokens used by the new settings layout */
+.modal.mod-settings {
+    --setting-items-background: var(--background);
+    --setting-items-radius: var(--border-radius);
+    --setting-items-border-width: 0;
+    --setting-items-divider-width: 0;
+    --setting-items-divider-color: transparent;
+    --modal-sidebar-background: var(--background-top);
+}
+
+/* settings opened in its own window (Obsidian 1.14 default) */
+body.is-popout-modal .modal.mod-settings.mod-sidebar-layout {
+    padding: var(--gap) !important;
+    background-color: var(--background) !important;
+}
+
+body.is-popout-modal .modal.mod-settings .modal-content {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    gap: var(--gap);
+}
+
+body.is-popout-modal .modal.mod-settings .vertical-tab-header {
+    background-color: var(--background-top) !important;
+    border-inline-end: none !important;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+body.is-popout-modal .modal.mod-settings .vertical-tab-content-container {
+    background-color: var(--floating-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+body.is-popout-modal .modal.mod-settings .vertical-tab-content {
+    background-color: var(--floating-background) !important;
+}
+
+/* setting groups rendered as neumorphic cards */
+.modal.mod-settings .setting-group .setting-items {
+    box-shadow: var(--box-shadow) !important;
+    border-radius: var(--border-radius) !important;
+    overflow: hidden;
+}
+
+.modal.mod-settings .setting-group .setting-items .setting-item:first-child {
+    border-start-start-radius: var(--border-radius) !important;
+    border-start-end-radius: var(--border-radius) !important;
+}
+
+.modal.mod-settings .setting-group .setting-items .setting-item:last-child {
+    border-end-start-radius: var(--border-radius) !important;
+    border-end-end-radius: var(--border-radius) !important;
+}
+
+/* other modals opened in their own window (e.g. community plugins) */
+body.is-popout-modal .modal {
+    background-color: var(--background) !important;
+}
+
+body.is-popout-modal .modal.mod-sidebar-layout .modal-content {
+    box-shadow: none !important;
+    border-radius: 0 !important;
 }
