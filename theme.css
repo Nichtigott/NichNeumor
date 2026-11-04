@@ -96,6 +96,12 @@ body {
     --nn-light-highlight-mix: 85%;   /* light-mode highlight = this much tint */
     --nn-dark-highlight-mix: 8%;     /* dark-mode highlight = this much tint */
 
+    /* geometry, same idea as neumorphism.io (distance / blur) */
+    --nn-distance: 4px;              /* panel shadow offset (site default 20px) */
+    --nn-blur: 8px;                  /* panel shadow blur   (site default 60px) */
+    --nn-button-distance: 2px;       /* small button shadow offset */
+    --nn-button-blur: 4px;           /* small button shadow blur */
+
     /* generated values (don't edit) */
     --light-background: var(--nn-light-bg);
     --dark-background: var(--nn-dark-bg);
@@ -132,17 +138,25 @@ body {
 
     --floating-background: var(--background);
 
-    --box-shadow: 4px 4px 8px light-dark(var(--light-shadow-first), var(--dark-shadow-first)), -4px -4px 8px light-dark(var(--light-shadow-second), var(--dark-shadow-second));
-    --box-shadow-excalidraw: 4px 4px 8px light-dark(var(--light-shadow-first), var(--dark-shadow-first-flip)), -4px -4px 8px light-dark(var(--light-shadow-second), var(--dark-shadow-second-flip));
+    --box-shadow: var(--nn-distance) var(--nn-distance) var(--nn-blur) light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
+                 calc(-1 * var(--nn-distance)) calc(-1 * var(--nn-distance)) var(--nn-blur) light-dark(var(--light-shadow-second), var(--dark-shadow-second));
+    --box-shadow-excalidraw: var(--nn-distance) var(--nn-distance) var(--nn-blur) light-dark(var(--light-shadow-first), var(--dark-shadow-first-flip)),
+                 calc(-1 * var(--nn-distance)) calc(-1 * var(--nn-distance)) var(--nn-blur) light-dark(var(--light-shadow-second), var(--dark-shadow-second-flip));
 
-    --button-box-shadow: 2px 2px 4px light-dark(var(--light-shadow-first), var(--dark-shadow-first)), -2px -2px 4px light-dark(var(--light-shadow-second), var(--dark-shadow-second));
-    --button-box-shadow-excalidraw: 2px 2px 4px light-dark(var(--light-shadow-first), var(--dark-shadow-first-flip)), -2px -2px 4px light-dark(var(--light-shadow-second), var(--dark-shadow-second-flip));
+    --button-box-shadow: var(--nn-button-distance) var(--nn-button-distance) var(--nn-button-blur) light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
+                 calc(-1 * var(--nn-button-distance)) calc(-1 * var(--nn-button-distance)) var(--nn-button-blur) light-dark(var(--light-shadow-second), var(--dark-shadow-second));
+    --button-box-shadow-excalidraw: var(--nn-button-distance) var(--nn-button-distance) var(--nn-button-blur) light-dark(var(--light-shadow-first), var(--dark-shadow-first-flip)),
+                 calc(-1 * var(--nn-button-distance)) calc(-1 * var(--nn-button-distance)) var(--nn-button-blur) light-dark(var(--light-shadow-second), var(--dark-shadow-second-flip));
 
-    --box-shadow-click: -4px -4px 8px light-dark(var(--light-shadow-first), var(--dark-shadow-first)), 4px 4px 8px light-dark(var(--light-shadow-second), var(--dark-shadow-second));
-    --box-shadow-click-excaldraw: -4px -4px 8px light-dark(var(--light-shadow-first), var(--dark-shadow-first-flip)), 4px 4px 8px light-dark(var(--light-shadow-second), var(--dark-shadow-second-flip));
+    --box-shadow-click: calc(-1 * var(--nn-distance)) calc(-1 * var(--nn-distance)) var(--nn-blur) light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
+                 var(--nn-distance) var(--nn-distance) var(--nn-blur) light-dark(var(--light-shadow-second), var(--dark-shadow-second));
+    --box-shadow-click-excaldraw: calc(-1 * var(--nn-distance)) calc(-1 * var(--nn-distance)) var(--nn-blur) light-dark(var(--light-shadow-first), var(--dark-shadow-first-flip)),
+                 var(--nn-distance) var(--nn-distance) var(--nn-blur) light-dark(var(--light-shadow-second), var(--dark-shadow-second-flip));
 
-    --button-box-shadow-click: -2px -2px 4px light-dark(var(--light-shadow-first), var(--dark-shadow-first)), 2px 2px 4px light-dark(var(--light-shadow-second), var(--dark-shadow-second));
-    --button-box-shadow-click-excalidraw: -2px -2px 4px light-dark(var(--light-shadow-first), var(--dark-shadow-first-flip)), 2px 2px 4px light-dark(var(--light-shadow-second), var(--dark-shadow-second-flip));
+    --button-box-shadow-click: calc(-1 * var(--nn-button-distance)) calc(-1 * var(--nn-button-distance)) var(--nn-button-blur) light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
+                 var(--nn-button-distance) var(--nn-button-distance) var(--nn-button-blur) light-dark(var(--light-shadow-second), var(--dark-shadow-second));
+    --button-box-shadow-click-excalidraw: calc(-1 * var(--nn-button-distance)) calc(-1 * var(--nn-button-distance)) var(--nn-button-blur) light-dark(var(--light-shadow-first), var(--dark-shadow-first-flip)),
+                 var(--nn-button-distance) var(--nn-button-distance) var(--nn-button-blur) light-dark(var(--light-shadow-second), var(--dark-shadow-second-flip));
 
     --text-shadow: -2px -2px 4px light-dark(var(--light-shadow-first), var(--dark-shadow-third)), 2px 2px 4px light-dark(var(--light-shadow-fifth), var(--dark-shadow-fourth));
 
