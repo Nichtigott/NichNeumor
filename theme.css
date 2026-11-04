@@ -541,6 +541,13 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
     margin: 5px 5px 5px 5px !important;
 }
 
+.excalidraw .color-picker__button__hotkey-label {
+    right: 6px !important;
+    bottom: 3px !important;
+    font-size: 9px !important;
+    line-height: 1 !important;
+}
+
 .excalidraw .color-picker__input-label {
     box-shadow: none !important;
     border-radius: var(--border-radius) !important;
