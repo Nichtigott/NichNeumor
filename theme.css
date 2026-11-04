@@ -1642,7 +1642,7 @@ body.is-popout-modal .modal.mod-settings .vertical-tab-content {
 .modal.mod-settings .setting-group .setting-items {
     box-shadow: var(--box-shadow) !important;
     border-radius: var(--border-radius) !important;
-    overflow: hidden;
+    overflow: visible !important;
 }
 
 .modal.mod-settings .setting-group .setting-items .setting-item:first-child {
@@ -1745,6 +1745,7 @@ body.is-popout-modal .modal.mod-sidebar-layout .modal-content {
     box-shadow: var(--box-shadow) !important;
     padding: 2px 14px !important;
     margin: 0 0 14px !important;
+    overflow: visible !important;
 }
 
 .modal.mod-settings .style-settings-container > .setting-item:not(.setting-item-heading) {
@@ -1775,6 +1776,11 @@ body.is-popout-modal .modal.mod-sidebar-layout .modal-content {
 }
 
 /* Pickr swatch + popup */
+.modal.mod-settings .setting-item:has(.pcr-app.visible) {
+    position: relative;
+    z-index: 20;
+}
+
 .pcr-button {
     border-radius: var(--border-radius) !important;
     border: none !important;
@@ -1786,6 +1792,7 @@ body.is-popout-modal .modal.mod-sidebar-layout .modal-content {
 }
 
 .pcr-app {
+    z-index: 1000 !important;
     background: var(--background) !important;
     border-radius: var(--border-radius) !important;
     border: none !important;
