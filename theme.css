@@ -11,12 +11,14 @@ settings:
     -
         id: nn-light-bg
         title: 亮色背景 / Light background
+        description: 只影响亮色模式，切到亮色主题查看 / light theme only
         type: variable-color
         format: hex
         default: '#dbd1c6'
     -
         id: nn-dark-bg
         title: 暗色背景 / Dark background
+        description: 只影响暗色模式，切到暗色主题查看 / dark theme only
         type: variable-color
         format: hex
         default: '#1a1b20'
@@ -97,18 +99,18 @@ settings:
     --color-purple: #b48ead;
     --color-pink-rgb: 213, 57, 132;
     --color-pink: #b0748f;
-    --color-base-00: #dbd1c6;
-    --color-base-05: #d6ccc1;
-    --color-base-10: #d1c7bd;
-    --color-base-20: #cbc2b8;
-    --color-base-25: #c6bdb3;
-    --color-base-30: #c1b8ae;
-    --color-base-35: #bcb3aa;
-    --color-base-40: #b6aea5;
-    --color-base-50: #98928c;
-    --color-base-60: #64615b;
-    --color-base-70: #54504d;
-    --color-base-100: #252423;
+    --color-base-00: var(--nn-light-bg);
+    --color-base-05: color-mix(in srgb, var(--nn-light-bg), #000 2%);
+    --color-base-10: color-mix(in srgb, var(--nn-light-bg), #000 5%);
+    --color-base-20: color-mix(in srgb, var(--nn-light-bg), #000 7%);
+    --color-base-25: color-mix(in srgb, var(--nn-light-bg), #000 9.5%);
+    --color-base-30: color-mix(in srgb, var(--nn-light-bg), #000 12%);
+    --color-base-35: color-mix(in srgb, var(--nn-light-bg), #000 14.5%);
+    --color-base-40: color-mix(in srgb, var(--nn-light-bg), #000 17%);
+    --color-base-50: color-mix(in srgb, var(--nn-light-bg), #000 30.5%);
+    --color-base-60: color-mix(in srgb, var(--nn-light-bg), #000 54%);
+    --color-base-70: color-mix(in srgb, var(--nn-light-bg), #000 62%);
+    --color-base-100: color-mix(in srgb, var(--nn-light-bg), #000 83%);
 }
 
 .theme-dark {
@@ -128,18 +130,18 @@ settings:
     --color-purple: #b48ead;
     --color-pink-rgb: 213, 57, 132;
     --color-pink: #c3afb8;
-    --color-base-00: #1a1b20;
-    --color-base-05: #222329;
-    --color-base-10: #2a2b33;
-    --color-base-20: #31333c;
-    --color-base-25: #393b46;
-    --color-base-30: #41424f;
-    --color-base-35: #494a58;
-    --color-base-40: #505262;
-    --color-base-50: #585a6b;
-    --color-base-60: #848697;
-    --color-base-70: #b1b3c2;
-    --color-base-100: #dddfee;
+    --color-base-00: var(--nn-dark-bg);
+    --color-base-05: color-mix(in srgb, var(--nn-dark-bg), #eef3ff 3.5%);
+    --color-base-10: color-mix(in srgb, var(--nn-dark-bg), #eef3ff 7%);
+    --color-base-20: color-mix(in srgb, var(--nn-dark-bg), #eef3ff 10.5%);
+    --color-base-25: color-mix(in srgb, var(--nn-dark-bg), #eef3ff 14%);
+    --color-base-30: color-mix(in srgb, var(--nn-dark-bg), #eef3ff 18%);
+    --color-base-35: color-mix(in srgb, var(--nn-dark-bg), #eef3ff 21.5%);
+    --color-base-40: color-mix(in srgb, var(--nn-dark-bg), #eef3ff 25%);
+    --color-base-50: color-mix(in srgb, var(--nn-dark-bg), #eef3ff 29%);
+    --color-base-60: color-mix(in srgb, var(--nn-dark-bg), #eef3ff 48%);
+    --color-base-70: color-mix(in srgb, var(--nn-dark-bg), #eef3ff 68%);
+    --color-base-100: color-mix(in srgb, var(--nn-dark-bg), #eef3ff 87%);
 }
 
 .theme-dark .mermaid>svg {
@@ -1589,4 +1591,82 @@ body.is-popout-modal .modal.mod-sidebar-layout .modal-content {
     box-shadow: none !important;
     background-color: transparent !important;
     border-radius: 0 !important;
+}
+
+
+/* === Style Settings plugin UI === */
+
+.modal.mod-settings .style-settings-container .setting-item {
+    background-color: var(--background) !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--button-box-shadow) !important;
+    margin: 6px 0 !important;
+    padding: 10px 14px !important;
+}
+
+.modal.mod-settings .style-settings-heading {
+    background-color: var(--background) !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--button-box-shadow) !important;
+    padding: 8px 12px !important;
+    margin: 12px 0 6px !important;
+}
+
+.modal.mod-settings input[type=range].slider {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    height: 26px;
+    background: transparent !important;
+}
+
+.modal.mod-settings input[type=range].slider::-webkit-slider-runnable-track {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--background);
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3), inset -1px -1px 2px rgba(255, 255, 255, 0.06);
+}
+
+.modal.mod-settings input[type=range].slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    margin-top: -6px;
+    border-radius: 50%;
+    background: var(--background);
+    box-shadow: var(--button-box-shadow);
+}
+
+.pcr-button {
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: var(--border-radius) !important;
+    border: none !important;
+    box-shadow: var(--button-box-shadow) !important;
+}
+
+.pcr-button:hover {
+    box-shadow: var(--button-box-shadow-click) !important;
+}
+
+.pcr-app {
+    background: var(--background) !important;
+    border-radius: var(--border-radius) !important;
+    border: none !important;
+    box-shadow: var(--box-shadow) !important;
+    color: var(--color-base-100) !important;
+}
+
+.pcr-app .pcr-result {
+    background: var(--background) !important;
+    color: var(--color-base-100) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.pcr-app .pcr-save,
+.pcr-app .pcr-cancel,
+.pcr-app .pcr-close {
+    border-radius: 8px !important;
 }

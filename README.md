@@ -93,6 +93,8 @@ Change the two backgrounds (and optionally the intensity / distance / blur) and 
 
 If the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin is enabled, the same controls are available as a GUI: **Settings -> Style Settings -> NichNeumor Palette** (two colour pickers, sliders for intensity / distance / blur).
 
+The whole Obsidian colour scale (`--color-base-*`: text, borders, selected items, inputs) is derived from the two backgrounds as well, so a new background colour recolours the entire theme instead of just the page behind the panels. The Style Settings controls themselves use the same neumorphic styling.
+
 Example — soft neutral grey scheme:
 
 ```css

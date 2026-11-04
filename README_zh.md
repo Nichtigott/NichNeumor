@@ -92,6 +92,8 @@
 
 启用 [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) 插件后，可以在 **设置 → Style Settings → NichNeumor Palette** 里用图形界面调：两个取色器 + 强度/距离/模糊滑杆。
 
+Obsidian 的整套 `--color-base-*`（文字、边框、选中项、输入框等）也会从这两个背景色按比例推导，所以换底色会整体换掉主题配色，而不只是面板后面的页面。Style Settings 的控件本身也套用了同样的拟物样式。
+
 示例——柔和中性灰配色：
 
 ```css
