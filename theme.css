@@ -1415,20 +1415,20 @@ body.is-popout-modal .modal.mod-sidebar-layout .modal-content {
     background-color: transparent !important;
     box-shadow: none !important;
     margin: 0 !important;
+    min-width: 36px !important;
 }
 
 .workspace-split.mod-horizontal.mod-sidedock .workspace-tab-header-container .workspace-tab-header .workspace-tab-header-inner {
-    margin: 0 !important;
-    height: 100% !important;
-    border-radius: var(--border-radius) !important;
+    margin: 3px !important;
+    height: calc(100% - 6px) !important;
+    border-radius: 8px !important;
     background-color: transparent !important;
 }
 
 .workspace-split.mod-horizontal.mod-sidedock .workspace-tab-header-container .workspace-tab-header:hover .workspace-tab-header-inner,
 .workspace-split.mod-horizontal.mod-sidedock .workspace-tab-header-container .workspace-tab-header.is-active .workspace-tab-header-inner {
     background-color: var(--background-modifier-hover) !important;
-    box-shadow: inset 3px 3px 7px light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
-                inset -3px -3px 7px light-dark(var(--light-shadow-second), var(--dark-shadow-second)) !important;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.22) !important;
 }
 
 /* Excalidraw side toolbar buttons: rounded corners + inset hover */
