@@ -71,17 +71,16 @@
 
 ### 自定义配色 / Custom Palette
 
-颜色和拟物阴影都由 `theme.css` 顶部的 `=== PALETTE ===` 区块生成（思路参考 [neumorphism.io](https://neumorphism.io)）：
+颜色和拟物阴影都由 `theme.css` 顶部的 `=== PALETTE ===` 区块生成，算法和 [neumorphism.io](https://neumorphism.io) 一致：
+
+- 暗影 = 底色 × (1 − intensity)
+- 亮影 = 底色 × (1 + intensity)（超过白色会 clamp）
 
 ```css
 --nn-light-bg: #dbd1c6;          /* 亮色背景 */
 --nn-dark-bg: #1a1b20;           /* 暗色背景 */
---nn-light-highlight: #fdf4e8;   /* 亮色高光色调 */
---nn-dark-highlight: #f4f9f4;
---nn-light-shadow-strength: 15%; /* 阴影强度（亮色） */
---nn-dark-shadow-strength: 60%;  /* 阴影强度（暗色） */
---nn-light-highlight-mix: 85%;
---nn-dark-highlight-mix: 8%;
+--nn-light-shadow-strength: 15;  /* 亮色强度（%） */
+--nn-dark-shadow-strength: 60;   /* 暗色强度（%） */
 
 --nn-distance: 4px;              /* 大面板阴影偏移 */
 --nn-blur: 8px;                  /* 大面板阴影模糊 */
@@ -89,19 +88,17 @@
 --nn-button-blur: 4px;
 ```
 
-改背景色、强度、距离和模糊，所有面板、按钮、标题栏阴影都会用 `color-mix()` 自动重新生成，不需要手写阴影颜色。
+只改两个背景色（需要的话再加强度/距离/模糊），所有面板、按钮、选中 tab、标题栏的阴影都会自动重算，不需要手选阴影颜色。
 
-启用 [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) 插件后，可以在 **设置 → Style Settings → NichNeumor Palette** 里用图形界面调：底色/高光是取色器，强度、距离、模糊是滑杆，改完即时生效。
+启用 [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) 插件后，可以在 **设置 → Style Settings → NichNeumor Palette** 里用图形界面调：两个取色器 + 强度/距离/模糊滑杆。
 
 示例——柔和中性灰配色：
 
 ```css
 --nn-light-bg: #e0e0e0;
---nn-light-highlight: #ffffff;
 --nn-distance: 10px;
 --nn-blur: 24px;
 ```
-
 
 ## 技术特性 / Technical Features
 

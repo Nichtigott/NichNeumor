@@ -72,17 +72,16 @@ The theme fully supports all standard Markdown syntax elements:
 
 ### Custom Palette
 
-Colours and neumorphic shadows are generated from a small palette block at the top of `theme.css` (`=== PALETTE ===`), modelled after [neumorphism.io](https://neumorphism.io):
+Colours and neumorphic shadows are generated from a small palette block at the top of `theme.css` (`=== PALETTE ===`), using the same maths as [neumorphism.io](https://neumorphism.io):
+
+- dark shadow = base colour x (1 - intensity)
+- light shadow = base colour x (1 + intensity), clamped at white
 
 ```css
 --nn-light-bg: #dbd1c6;          /* light background */
 --nn-dark-bg: #1a1b20;           /* dark background */
---nn-light-highlight: #fdf4e8;   /* light-mode highlight tint */
---nn-dark-highlight: #f4f9f4;
---nn-light-shadow-strength: 15%; /* shadow intensity (light) */
---nn-dark-shadow-strength: 60%;  /* shadow intensity (dark) */
---nn-light-highlight-mix: 85%;
---nn-dark-highlight-mix: 8%;
+--nn-light-shadow-strength: 15;  /* light intensity, % */
+--nn-dark-shadow-strength: 60;   /* dark intensity, % */
 
 --nn-distance: 4px;              /* panel shadow offset */
 --nn-blur: 8px;                  /* panel shadow blur */
@@ -90,19 +89,17 @@ Colours and neumorphic shadows are generated from a small palette block at the t
 --nn-button-blur: 4px;
 ```
 
-Change the backgrounds and the intensity/distance values and every panel, button and titlebar shadow is regenerated with `color-mix()` — no manual shadow colours needed.
+Change the two backgrounds (and optionally the intensity / distance / blur) and every panel, button, active tab and titlebar shadow is regenerated — there is no shadow colour to pick.
 
-If the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin is enabled, the same controls are available as a GUI: **Settings → Style Settings → NichNeumor Palette** (colour pickers for the base colours/highlights, sliders for intensity, distance and blur).
+If the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin is enabled, the same controls are available as a GUI: **Settings -> Style Settings -> NichNeumor Palette** (two colour pickers, sliders for intensity / distance / blur).
 
 Example — soft neutral grey scheme:
 
 ```css
 --nn-light-bg: #e0e0e0;
---nn-light-highlight: #ffffff;
 --nn-distance: 10px;
 --nn-blur: 24px;
 ```
-
 
 ## Technical Features
 

@@ -21,18 +21,6 @@ settings:
         format: hex
         default: '#1a1b20'
     -
-        id: nn-light-highlight
-        title: 亮色高光 / Light highlight tint
-        type: variable-color
-        format: hex
-        default: '#fdf4e8'
-    -
-        id: nn-dark-highlight
-        title: 暗色高光 / Dark highlight tint
-        type: variable-color
-        format: hex
-        default: '#f4f9f4'
-    -
         id: nn-shadows
         title: 阴影 / Shadows
         type: heading
@@ -52,22 +40,6 @@ settings:
         default: 60
         min: 0
         max: 100
-        step: 1
-    -
-        id: nn-light-highlight-mix
-        title: 亮色高光混合 / Light highlight mix (%)
-        type: variable-number-slider
-        default: 85
-        min: 0
-        max: 100
-        step: 1
-    -
-        id: nn-dark-highlight-mix
-        title: 暗色高光混合 / Dark highlight mix (%)
-        type: variable-number-slider
-        default: 8
-        min: 0
-        max: 40
         step: 1
     -
         id: nn-distance
@@ -199,12 +171,10 @@ body {
        ================================================================== */
     --nn-light-bg: #dbd1c6;          /* light page background */
     --nn-dark-bg: #1a1b20;           /* dark page background */
-    --nn-light-highlight: #fdf4e8;   /* light-mode highlight tint */
-    --nn-dark-highlight: #f4f9f4;    /* dark-mode highlight tint */
     --nn-light-shadow-strength: 15;  /* light-mode shadow = bg + this much black (%) */
     --nn-dark-shadow-strength: 60;   /* dark-mode shadow = bg + this much black (%) */
-    --nn-light-highlight-mix: 85;    /* light-mode highlight = this much tint (%) */
-    --nn-dark-highlight-mix: 8;      /* dark-mode highlight = this much tint (%) */
+    --nn-light-shadow-factor: calc(1 + var(--nn-light-shadow-strength) / 100);
+    --nn-dark-shadow-factor: calc(1 + var(--nn-dark-shadow-strength) / 100);
 
     /* geometry, same idea as neumorphism.io (distance / blur) */
     --nn-distance: 4px;              /* panel shadow offset (site default 20px) */
@@ -217,13 +187,13 @@ body {
     --dark-background: var(--nn-dark-bg);
 
     --light-shadow-first: color-mix(in srgb, var(--nn-light-bg), #000 calc(var(--nn-light-shadow-strength) * 1%));
-    --light-shadow-second: color-mix(in srgb, var(--nn-light-highlight) calc(var(--nn-light-highlight-mix) * 1%), var(--nn-light-bg));
+    --light-shadow-second: color-mix(in srgb, var(--nn-light-bg) 18%, #fff);
     --light-shadow-third: color-mix(in srgb, var(--nn-light-bg) 65%, #fff);
     --light-shadow-fourth: color-mix(in srgb, var(--nn-light-bg), #000 7%);
     --light-shadow-fifth: #FCFCFC;
 
     --dark-shadow-first: color-mix(in srgb, var(--nn-dark-bg), #000 calc(var(--nn-dark-shadow-strength) * 1%));
-    --dark-shadow-second: color-mix(in srgb, var(--nn-dark-highlight) calc(var(--nn-dark-highlight-mix) * 1%), var(--nn-dark-bg));
+    --dark-shadow-second: color-mix(in srgb, var(--nn-dark-bg) 92%, #fff);
     --dark-shadow-third: #000000;
     --dark-shadow-fourth: color-mix(in srgb, var(--nn-dark-bg) 65%, #fff);
 
@@ -277,6 +247,14 @@ body {
     --border-radius: 10px;
     --border-radius-twice: 10px 10px 0px 0px;
     --overflow: unset;
+}
+
+/* neumorphism.io-style light shadow: base colour x (1 + intensity), clamped */
+@supports (color: rgb(from #fff r g b)) {
+    body {
+        --light-shadow-second: rgb(from var(--nn-light-bg) calc(r * var(--nn-light-shadow-factor)) calc(g * var(--nn-light-shadow-factor)) calc(b * var(--nn-light-shadow-factor)));
+        --dark-shadow-second: rgb(from var(--nn-dark-bg) calc(r * var(--nn-dark-shadow-factor)) calc(g * var(--nn-dark-shadow-factor)) calc(b * var(--nn-dark-shadow-factor)));
+    }
 }
 
 /* === setting menu === */
