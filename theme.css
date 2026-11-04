@@ -23,85 +23,116 @@ settings:
         format: hex
         default: '#1a1b20'
     -
+        id: nn-accents-light
+        title: 语义色-亮色 / Accent colours (light)
+        type: heading
+        level: 2
+    -
+        id: nn-red-light
+        title: 红 / Red
+        type: variable-color
+        format: hex
+        default: '#bf616a'
+    -
+        id: nn-orange-light
+        title: 橙 / Orange
+        type: variable-color
+        format: hex
+        default: '#d08770'
+    -
+        id: nn-yellow-light
+        title: 黄 / Yellow
+        type: variable-color
+        format: hex
+        default: '#c4963a'
+    -
+        id: nn-green-light
+        title: 绿 / Green
+        type: variable-color
+        format: hex
+        default: '#8aa176'
+    -
+        id: nn-cyan-light
+        title: 青 / Cyan
+        type: variable-color
+        format: hex
+        default: '#70a9a8'
+    -
+        id: nn-blue-light
+        title: 蓝 / Blue
+        type: variable-color
+        format: hex
+        default: '#81a1c1'
+    -
+        id: nn-purple-light
+        title: 紫 / Purple
+        type: variable-color
+        format: hex
+        default: '#b48ead'
+    -
+        id: nn-pink-light
+        title: 粉 / Pink
+        type: variable-color
+        format: hex
+        default: '#b0748f'
+    -
+        id: nn-accents-dark
+        title: 语义色-暗色 / Accent colours (dark)
+        type: heading
+        level: 2
+    -
+        id: nn-red-dark
+        title: 红 / Red (dark)
+        type: variable-color
+        format: hex
+        default: '#bf616a'
+    -
+        id: nn-orange-dark
+        title: 橙 / Orange (dark)
+        type: variable-color
+        format: hex
+        default: '#d08770'
+    -
+        id: nn-yellow-dark
+        title: 黄 / Yellow (dark)
+        type: variable-color
+        format: hex
+        default: '#ebcb8b'
+    -
+        id: nn-green-dark
+        title: 绿 / Green (dark)
+        type: variable-color
+        format: hex
+        default: '#a3be8c'
+    -
+        id: nn-cyan-dark
+        title: 青 / Cyan (dark)
+        type: variable-color
+        format: hex
+        default: '#8fbcbb'
+    -
+        id: nn-blue-dark
+        title: 蓝 / Blue (dark)
+        type: variable-color
+        format: hex
+        default: '#81a1c1'
+    -
+        id: nn-purple-dark
+        title: 紫 / Purple (dark)
+        type: variable-color
+        format: hex
+        default: '#b48ead'
+    -
+        id: nn-pink-dark
+        title: 粉 / Pink (dark)
+        type: variable-color
+        format: hex
+        default: '#c3afb8'
+    -
         id: nn-shadows
         title: 阴影 / Shadows
         type: heading
         level: 2
-    -
-        id: nn-shadow-style
-        title: 阴影方向 / Shadow direction
-        description: 凸起或凹陷（和 neumorphism.io 的 pressed 模式一样）
-        type: class-select
-        allowEmpty: false
-        default: nn-raised
-        options:
-            -
-                label: 凸起 / Raised
-                value: nn-raised
-            -
-                label: 凹陷 / Inset
-                value: nn-inset
-    -
-        id: nn-accents
-        title: 语义色 / Accent colours
-        type: heading
-        level: 2
-    -
-        id: nn-red
-        title: 红 / Red
-        type: variable-themed-color
-        format: hex
-        default-light: '#bf616a'
-        default-dark: '#bf616a'
-    -
-        id: nn-orange
-        title: 橙 / Orange
-        type: variable-themed-color
-        format: hex
-        default-light: '#d08770'
-        default-dark: '#d08770'
-    -
-        id: nn-yellow
-        title: 黄 / Yellow
-        type: variable-themed-color
-        format: hex
-        default-light: '#c4963a'
-        default-dark: '#ebcb8b'
-    -
-        id: nn-green
-        title: 绿 / Green
-        type: variable-themed-color
-        format: hex
-        default-light: '#8aa176'
-        default-dark: '#a3be8c'
-    -
-        id: nn-cyan
-        title: 青 / Cyan
-        type: variable-themed-color
-        format: hex
-        default-light: '#70a9a8'
-        default-dark: '#8fbcbb'
-    -
-        id: nn-blue
-        title: 蓝 / Blue
-        type: variable-themed-color
-        format: hex
-        default-light: '#81a1c1'
-        default-dark: '#81a1c1'
-    -
-        id: nn-purple
-        title: 紫 / Purple
-        type: variable-themed-color
-        format: hex
-        default-light: '#b48ead'
-        default-dark: '#b48ead'
-    -
-        id: nn-pink
-        title: 粉 / Pink
-        type: variable-themed-color
-        format: hex
-        default-light: '#b0748f'
-        default-dark: '#c3afb8'
     -
         id: nn-light-shadow-strength
         title: 亮色阴影强度 / Light shadow intensity (%)
@@ -208,21 +239,21 @@ settings:
 
 .theme-light {
     --color-red-rgb: 233, 49, 71;
-    --color-red: var(--nn-red);
+    --color-red: var(--nn-red-light);
     --color-orange-rgb: 236, 117, 0;
-    --color-orange: var(--nn-orange);
+    --color-orange: var(--nn-orange-light);
     --color-yellow-rgb: 224, 172, 0;
-    --color-yellow: var(--nn-yellow);
+    --color-yellow: var(--nn-yellow-light);
     --color-green-rgb: 8, 185, 78;
-    --color-green: var(--nn-green);
+    --color-green: var(--nn-green-light);
     --color-cyan-rgb: 0, 191, 188;
-    --color-cyan: var(--nn-cyan);
+    --color-cyan: var(--nn-cyan-light);
     --color-blue-rgb: 8, 109, 221;
-    --color-blue: var(--nn-blue);
+    --color-blue: var(--nn-blue-light);
     --color-purple-rgb: 120, 82, 238;
-    --color-purple: var(--nn-purple);
+    --color-purple: var(--nn-purple-light);
     --color-pink-rgb: 213, 57, 132;
-    --color-pink: var(--nn-pink);
+    --color-pink: var(--nn-pink-light);
     --color-base-00: var(--nn-light-bg);
     --color-base-05: color-mix(in srgb, var(--nn-light-bg), #000 2%);
     --color-base-10: color-mix(in srgb, var(--nn-light-bg), #000 5%);
@@ -235,25 +266,26 @@ settings:
     --color-base-60: color-mix(in srgb, var(--nn-light-bg), #000 54%);
     --color-base-70: color-mix(in srgb, var(--nn-light-bg), #000 62%);
     --color-base-100: color-mix(in srgb, var(--nn-light-bg), #000 83%);
+
 }
 
 .theme-dark {
     --color-red-rgb: 233, 49, 71;
-    --color-red: var(--nn-red);
+    --color-red: var(--nn-red-dark);
     --color-orange-rgb: 236, 117, 0;
-    --color-orange: var(--nn-orange);
+    --color-orange: var(--nn-orange-dark);
     --color-yellow-rgb: 224, 172, 0;
-    --color-yellow: var(--nn-yellow);
+    --color-yellow: var(--nn-yellow-dark);
     --color-green-rgb: 8, 185, 78;
-    --color-green: var(--nn-green);
+    --color-green: var(--nn-green-dark);
     --color-cyan-rgb: 0, 191, 188;
-    --color-cyan: var(--nn-cyan);
+    --color-cyan: var(--nn-cyan-dark);
     --color-blue-rgb: 8, 109, 221;
-    --color-blue: var(--nn-blue);
+    --color-blue: var(--nn-blue-dark);
     --color-purple-rgb: 120, 82, 238;
-    --color-purple: var(--nn-purple);
+    --color-purple: var(--nn-purple-dark);
     --color-pink-rgb: 213, 57, 132;
-    --color-pink: var(--nn-pink);
+    --color-pink: var(--nn-pink-dark);
     --color-base-00: var(--nn-dark-bg);
     --color-base-05: color-mix(in srgb, var(--nn-dark-bg), #eef3ff 3.5%);
     --color-base-10: color-mix(in srgb, var(--nn-dark-bg), #eef3ff 7%);
@@ -266,6 +298,7 @@ settings:
     --color-base-60: color-mix(in srgb, var(--nn-dark-bg), #eef3ff 48%);
     --color-base-70: color-mix(in srgb, var(--nn-dark-bg), #eef3ff 68%);
     --color-base-100: color-mix(in srgb, var(--nn-dark-bg), #eef3ff 87%);
+
 }
 
 .theme-dark .mermaid>svg {
@@ -295,15 +328,23 @@ body {
        Edit the --nn-* values below to build a new colour scheme.
        All neumorphic highlights / shadows are generated from them.
        ================================================================== */
-    --nn-red: light-dark(#bf616a, #bf616a);
-    --nn-orange: light-dark(#d08770, #d08770);
-    --nn-yellow: light-dark(#c4963a, #ebcb8b);
-    --nn-green: light-dark(#8aa176, #a3be8c);
-    --nn-cyan: light-dark(#70a9a8, #8fbcbb);
-    --nn-blue: light-dark(#81a1c1, #81a1c1);
-    --nn-purple: light-dark(#b48ead, #b48ead);
-    --nn-pink: light-dark(#b0748f, #c3afb8);
 
+    --nn-red-light: #bf616a;
+    --nn-red-dark: #bf616a;
+    --nn-orange-light: #d08770;
+    --nn-orange-dark: #d08770;
+    --nn-yellow-light: #c4963a;
+    --nn-yellow-dark: #ebcb8b;
+    --nn-green-light: #8aa176;
+    --nn-green-dark: #a3be8c;
+    --nn-cyan-light: #70a9a8;
+    --nn-cyan-dark: #8fbcbb;
+    --nn-blue-light: #81a1c1;
+    --nn-blue-dark: #81a1c1;
+    --nn-purple-light: #b48ead;
+    --nn-purple-dark: #b48ead;
+    --nn-pink-light: #b0748f;
+    --nn-pink-dark: #c3afb8;
     --nn-light-bg: #dbd1c6;          /* light page background */
     --nn-dark-bg: #1a1b20;           /* dark page background */
     --nn-light-shadow-strength: 15;  /* light-mode shadow = bg + this much black (%) */
@@ -390,18 +431,6 @@ body {
         --light-shadow-second: rgb(from var(--nn-light-bg) clamp(0, calc(r * var(--nn-light-shadow-factor)), 255) clamp(0, calc(g * var(--nn-light-shadow-factor)), 255) clamp(0, calc(b * var(--nn-light-shadow-factor)), 255));
         --dark-shadow-second: rgb(from var(--nn-dark-bg) clamp(0, calc(r * var(--nn-dark-shadow-factor)), 255) clamp(0, calc(g * var(--nn-dark-shadow-factor)), 255) clamp(0, calc(b * var(--nn-dark-shadow-factor)), 255));
     }
-}
-
-/* inset (pressed) shadow mode */
-body.nn-inset {
-    --box-shadow: inset var(--nn-distance) var(--nn-distance) var(--nn-blur) light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
-                 inset calc(-1 * var(--nn-distance)) calc(-1 * var(--nn-distance)) var(--nn-blur) light-dark(var(--light-shadow-second), var(--dark-shadow-second));
-    --button-box-shadow: inset var(--nn-button-distance) var(--nn-button-distance) var(--nn-button-blur) light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
-                 inset calc(-1 * var(--nn-button-distance)) calc(-1 * var(--nn-button-distance)) var(--nn-button-blur) light-dark(var(--light-shadow-second), var(--dark-shadow-second));
-    --box-shadow-click: inset calc(-1 * var(--nn-distance)) calc(-1 * var(--nn-distance)) var(--nn-blur) light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
-                 inset var(--nn-distance) var(--nn-distance) var(--nn-blur) light-dark(var(--light-shadow-second), var(--dark-shadow-second));
-    --button-box-shadow-click: inset calc(-1 * var(--nn-button-distance)) calc(-1 * var(--nn-button-distance)) var(--nn-button-blur) light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
-                 inset var(--nn-button-distance) var(--nn-button-distance) var(--nn-button-blur) light-dark(var(--light-shadow-second), var(--dark-shadow-second));
 }
 
 /* === setting menu === */
