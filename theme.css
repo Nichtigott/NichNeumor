@@ -224,8 +224,8 @@ body {
     --nn-dark-bg: #1a1b20;           /* dark page background */
     --nn-light-shadow-strength: 15;  /* light-mode shadow = bg + this much black (%) */
     --nn-dark-shadow-strength: 60;   /* dark-mode shadow = bg + this much black (%) */
-    --nn-light-shadow-factor: calc(1 + var(--nn-light-shadow-strength) / 100);
-    --nn-dark-shadow-factor: calc(1 + var(--nn-dark-shadow-strength) / 100);
+    --nn-light-shadow-factor: clamp(1, calc(1 + var(--nn-light-shadow-strength) / 100), 2);
+    --nn-dark-shadow-factor: clamp(1, calc(1 + var(--nn-dark-shadow-strength) / 100), 2);
 
     /* geometry, same idea as neumorphism.io (distance / blur) */
     --nn-distance: 4px;              /* panel shadow offset (site default 20px) */
@@ -303,8 +303,8 @@ body {
 /* neumorphism.io-style light shadow: base colour x (1 + intensity), clamped */
 @supports (color: rgb(from #fff r g b)) {
     body {
-        --light-shadow-second: rgb(from var(--nn-light-bg) calc(r * var(--nn-light-shadow-factor)) calc(g * var(--nn-light-shadow-factor)) calc(b * var(--nn-light-shadow-factor)));
-        --dark-shadow-second: rgb(from var(--nn-dark-bg) calc(r * var(--nn-dark-shadow-factor)) calc(g * var(--nn-dark-shadow-factor)) calc(b * var(--nn-dark-shadow-factor)));
+        --light-shadow-second: rgb(from var(--nn-light-bg) clamp(0, calc(r * var(--nn-light-shadow-factor)), 255) clamp(0, calc(g * var(--nn-light-shadow-factor)), 255) clamp(0, calc(b * var(--nn-light-shadow-factor)), 255));
+        --dark-shadow-second: rgb(from var(--nn-dark-bg) clamp(0, calc(r * var(--nn-dark-shadow-factor)), 255) clamp(0, calc(g * var(--nn-dark-shadow-factor)), 255) clamp(0, calc(b * var(--nn-dark-shadow-factor)), 255));
     }
 }
 
@@ -706,8 +706,8 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 
 .excalidraw .color-picker__button {
     box-shadow: var(--button-box-shadow) !important;
-    border-radius: 10px !important;
-    margin: 5px 5px 5px 5px !important;
+    border-radius: 6px !important;
+    margin: 0 !important;
 }
 
 .excalidraw .color-picker__button__hotkey-label {
