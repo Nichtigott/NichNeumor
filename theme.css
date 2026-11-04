@@ -83,24 +83,40 @@ body {
 
     --header-padding: 5px;
 
-    --light-titlebar-background-focused: #bab2a8;
-    --dark-titlebar-background-focused: #0a0b0d;
-    --light-titlebar-background: #fcf0e4;
-    --dark-titlebar-background: #2a2b33;
-    --titlebar-border-color: transparent;
+    /* === PALETTE =======================================================
+       Edit the --nn-* values below to build a new colour scheme.
+       All neumorphic highlights / shadows are generated from them.
+       ================================================================== */
+    --nn-light-bg: #dbd1c6;          /* light page background */
+    --nn-dark-bg: #1a1b20;           /* dark page background */
+    --nn-light-highlight: #fdf4e8;   /* light-mode highlight tint */
+    --nn-dark-highlight: #f4f9f4;    /* dark-mode highlight tint */
+    --nn-light-shadow-strength: 15%; /* light-mode shadow = bg + this much black */
+    --nn-dark-shadow-strength: 60%;  /* dark-mode shadow = bg + this much black */
+    --nn-light-highlight-mix: 85%;   /* light-mode highlight = this much tint */
+    --nn-dark-highlight-mix: 8%;     /* dark-mode highlight = this much tint */
 
-    --light-background: #dbd1c6;
-    --light-shadow-first: #bab2a8;
-    --light-shadow-second: #fcf0e4;
-    --light-shadow-third: #ede2d6;
-    --light-shadow-fourth: #ccc3b8;
+    /* generated values (don't edit) */
+    --light-background: var(--nn-light-bg);
+    --dark-background: var(--nn-dark-bg);
+
+    --light-shadow-first: color-mix(in srgb, var(--nn-light-bg), #000 var(--nn-light-shadow-strength));
+    --light-shadow-second: color-mix(in srgb, var(--nn-light-highlight) var(--nn-light-highlight-mix), var(--nn-light-bg));
+    --light-shadow-third: color-mix(in srgb, var(--nn-light-bg) 65%, #fff);
+    --light-shadow-fourth: color-mix(in srgb, var(--nn-light-bg), #000 7%);
     --light-shadow-fifth: #FCFCFC;
 
-    --dark-background: #1a1b20;
-    --dark-shadow-first: #0a0b0d;
-    --dark-shadow-second: #2a2b33;
+    --dark-shadow-first: color-mix(in srgb, var(--nn-dark-bg), #000 var(--nn-dark-shadow-strength));
+    --dark-shadow-second: color-mix(in srgb, var(--nn-dark-highlight) var(--nn-dark-highlight-mix), var(--nn-dark-bg));
     --dark-shadow-third: #000000;
-    --dark-shadow-fourth: #6b6c7b;
+    --dark-shadow-fourth: color-mix(in srgb, var(--nn-dark-bg) 65%, #fff);
+
+    /* title bar follows the same palette */
+    --light-titlebar-background-focused: var(--light-shadow-first);
+    --dark-titlebar-background-focused: var(--dark-shadow-first);
+    --light-titlebar-background: var(--light-shadow-second);
+    --dark-titlebar-background: var(--dark-shadow-second);
+    --titlebar-border-color: transparent;
 
     --dark-background-flip: #EFF0F6;
     --dark-shadow-first-flip: #FFFFFF;
@@ -111,7 +127,7 @@ body {
 
 
     --background: light-dark(var(--light-background), var(--dark-background));
-    --background-top: light-dark(var(--color-base-10), var(--color-base-05));
+    --background-top: var(--background);
     --background-excalidraw: light-dark(var(--light-background), var(--dark-background-flip));
 
     --floating-background: var(--background);
@@ -606,7 +622,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 }
 
 .excalidraw .mobile-misc-tools-container {
-    padding: 5px 6px 5px 5px !important;
+    padding: 5px 6px 10px 5px !important;
     gap: 8px !important;
 }
 
@@ -1144,6 +1160,23 @@ body:not(.mod-macos) .sidebar-toggle-button.mod-left,
 
 .workspace-split.mod-horizontal.mod-sidedock.mod-right-split {
     gap: 0;
+    margin-inline-end: 0 !important;
+    border-radius: var(--border-radius) 0 0 var(--border-radius) !important;
+}
+
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-leaf,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-leaf-content,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-header,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .view-header {
+    background-color: var(--floating-background) !important;
+}
+
+.workspace-split.mod-horizontal.mod-sidedock .workspace-tab-header-container {
+    padding-inline: 6px !important;
+}
+
+.workspace-split.mod-horizontal.mod-sidedock .nav-header {
+    padding: 10px 12px !important;
 }
 
 .workspace>*,
