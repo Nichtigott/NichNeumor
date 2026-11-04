@@ -82,6 +82,55 @@ settings:
 
 */
 
+/* register palette variables so a bad picker value falls back to the default */
+@property --nn-light-bg {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #dbd1c6;
+}
+
+@property --nn-dark-bg {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #1a1b20;
+}
+
+@property --nn-light-shadow-strength {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 15;
+}
+
+@property --nn-dark-shadow-strength {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 60;
+}
+
+@property --nn-distance {
+    syntax: '<length>';
+    inherits: true;
+    initial-value: 4px;
+}
+
+@property --nn-blur {
+    syntax: '<length>';
+    inherits: true;
+    initial-value: 8px;
+}
+
+@property --nn-button-distance {
+    syntax: '<length>';
+    inherits: true;
+    initial-value: 2px;
+}
+
+@property --nn-button-blur {
+    syntax: '<length>';
+    inherits: true;
+    initial-value: 4px;
+}
+
 .theme-light {
     --color-red-rgb: 233, 49, 71;
     --color-red: #bf616a;
@@ -726,7 +775,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 }
 
 .excalidraw .mobile-misc-tools-container {
-    padding: 5px 6px 10px 5px !important;
+    padding: 5px 6px 5px 5px !important;
     gap: 8px !important;
 }
 
@@ -864,7 +913,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 
 .excalidraw .mobile-misc-tools-container .default-sidebar-trigger {
     padding: 5px !important;
-    margin: 0px 7px 0px 3px !important;
+    margin: 0 !important;
     box-shadow: none !important;
     background: none !important;
 }
@@ -1596,50 +1645,44 @@ body.is-popout-modal .modal.mod-sidebar-layout .modal-content {
 
 /* === Style Settings plugin UI === */
 
-.modal.mod-settings .style-settings-container .setting-item {
+/* one card per collapsible group, rows stay flat (like the native settings tab) */
+.modal.mod-settings .style-settings-container:has(> .setting-item:not(.setting-item-heading)) {
     background-color: var(--background) !important;
     border-radius: var(--border-radius) !important;
-    box-shadow: var(--button-box-shadow) !important;
-    margin: 6px 0 !important;
-    padding: 10px 14px !important;
+    box-shadow: var(--box-shadow) !important;
+    padding: 2px 14px !important;
+    margin: 0 0 14px !important;
 }
 
-.modal.mod-settings .style-settings-heading {
-    background-color: var(--background) !important;
-    border-radius: var(--border-radius) !important;
-    box-shadow: var(--button-box-shadow) !important;
-    padding: 8px 12px !important;
-    margin: 12px 0 6px !important;
-}
-
-.modal.mod-settings input[type=range].slider {
-    -webkit-appearance: none !important;
-    appearance: none !important;
-    height: 26px;
+.modal.mod-settings .style-settings-container > .setting-item:not(.setting-item-heading) {
     background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 12px 0 !important;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-base-100) 10%, transparent) !important;
 }
 
-.modal.mod-settings input[type=range].slider::-webkit-slider-runnable-track {
-    height: 8px;
-    border-radius: 4px;
-    background: var(--background);
-    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3), inset -1px -1px 2px rgba(255, 255, 255, 0.06);
+.modal.mod-settings .style-settings-container > .setting-item:not(.setting-item-heading):last-of-type {
+    border-bottom: none !important;
 }
 
-.modal.mod-settings input[type=range].slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    margin-top: -6px;
-    border-radius: 50%;
-    background: var(--background);
-    box-shadow: var(--button-box-shadow);
+.modal.mod-settings .setting-item.setting-item-heading.style-settings-heading {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 16px 2px 6px !important;
 }
 
+/* keep reset / extra buttons colourless so they blend with the surface */
+.modal.mod-settings .extra-setting-button {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Pickr swatch + popup */
 .pcr-button {
-    width: 34px !important;
-    height: 34px !important;
     border-radius: var(--border-radius) !important;
     border: none !important;
     box-shadow: var(--button-box-shadow) !important;
