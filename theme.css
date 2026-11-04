@@ -1,3 +1,113 @@
+/* @settings
+
+name: NichNeumor Palette
+id: nichneumor-palette
+settings:
+    -
+        id: nn-colors
+        title: 颜色 / Colors
+        type: heading
+        level: 2
+    -
+        id: nn-light-bg
+        title: 亮色背景 / Light background
+        type: variable-color
+        format: hex
+        default: '#dbd1c6'
+    -
+        id: nn-dark-bg
+        title: 暗色背景 / Dark background
+        type: variable-color
+        format: hex
+        default: '#1a1b20'
+    -
+        id: nn-light-highlight
+        title: 亮色高光 / Light highlight tint
+        type: variable-color
+        format: hex
+        default: '#fdf4e8'
+    -
+        id: nn-dark-highlight
+        title: 暗色高光 / Dark highlight tint
+        type: variable-color
+        format: hex
+        default: '#f4f9f4'
+    -
+        id: nn-shadows
+        title: 阴影 / Shadows
+        type: heading
+        level: 2
+    -
+        id: nn-light-shadow-strength
+        title: 亮色阴影强度 / Light shadow intensity (%)
+        type: variable-number-slider
+        default: 15
+        min: 0
+        max: 50
+        step: 1
+    -
+        id: nn-dark-shadow-strength
+        title: 暗色阴影强度 / Dark shadow intensity (%)
+        type: variable-number-slider
+        default: 60
+        min: 0
+        max: 100
+        step: 1
+    -
+        id: nn-light-highlight-mix
+        title: 亮色高光混合 / Light highlight mix (%)
+        type: variable-number-slider
+        default: 85
+        min: 0
+        max: 100
+        step: 1
+    -
+        id: nn-dark-highlight-mix
+        title: 暗色高光混合 / Dark highlight mix (%)
+        type: variable-number-slider
+        default: 8
+        min: 0
+        max: 40
+        step: 1
+    -
+        id: nn-distance
+        title: 大面板阴影距离 / Panel shadow distance
+        type: variable-number-slider
+        default: 4
+        min: 0
+        max: 20
+        step: 1
+        format: px
+    -
+        id: nn-blur
+        title: 大面板阴影模糊 / Panel shadow blur
+        type: variable-number-slider
+        default: 8
+        min: 0
+        max: 40
+        step: 1
+        format: px
+    -
+        id: nn-button-distance
+        title: 按钮阴影距离 / Button shadow distance
+        type: variable-number-slider
+        default: 2
+        min: 0
+        max: 10
+        step: 1
+        format: px
+    -
+        id: nn-button-blur
+        title: 按钮阴影模糊 / Button shadow blur
+        type: variable-number-slider
+        default: 4
+        min: 0
+        max: 20
+        step: 1
+        format: px
+
+*/
+
 .theme-light {
     --color-red-rgb: 233, 49, 71;
     --color-red: #bf616a;
@@ -91,10 +201,10 @@ body {
     --nn-dark-bg: #1a1b20;           /* dark page background */
     --nn-light-highlight: #fdf4e8;   /* light-mode highlight tint */
     --nn-dark-highlight: #f4f9f4;    /* dark-mode highlight tint */
-    --nn-light-shadow-strength: 15%; /* light-mode shadow = bg + this much black */
-    --nn-dark-shadow-strength: 60%;  /* dark-mode shadow = bg + this much black */
-    --nn-light-highlight-mix: 85%;   /* light-mode highlight = this much tint */
-    --nn-dark-highlight-mix: 8%;     /* dark-mode highlight = this much tint */
+    --nn-light-shadow-strength: 15;  /* light-mode shadow = bg + this much black (%) */
+    --nn-dark-shadow-strength: 60;   /* dark-mode shadow = bg + this much black (%) */
+    --nn-light-highlight-mix: 85;    /* light-mode highlight = this much tint (%) */
+    --nn-dark-highlight-mix: 8;      /* dark-mode highlight = this much tint (%) */
 
     /* geometry, same idea as neumorphism.io (distance / blur) */
     --nn-distance: 4px;              /* panel shadow offset (site default 20px) */
@@ -106,14 +216,14 @@ body {
     --light-background: var(--nn-light-bg);
     --dark-background: var(--nn-dark-bg);
 
-    --light-shadow-first: color-mix(in srgb, var(--nn-light-bg), #000 var(--nn-light-shadow-strength));
-    --light-shadow-second: color-mix(in srgb, var(--nn-light-highlight) var(--nn-light-highlight-mix), var(--nn-light-bg));
+    --light-shadow-first: color-mix(in srgb, var(--nn-light-bg), #000 calc(var(--nn-light-shadow-strength) * 1%));
+    --light-shadow-second: color-mix(in srgb, var(--nn-light-highlight) calc(var(--nn-light-highlight-mix) * 1%), var(--nn-light-bg));
     --light-shadow-third: color-mix(in srgb, var(--nn-light-bg) 65%, #fff);
     --light-shadow-fourth: color-mix(in srgb, var(--nn-light-bg), #000 7%);
     --light-shadow-fifth: #FCFCFC;
 
-    --dark-shadow-first: color-mix(in srgb, var(--nn-dark-bg), #000 var(--nn-dark-shadow-strength));
-    --dark-shadow-second: color-mix(in srgb, var(--nn-dark-highlight) var(--nn-dark-highlight-mix), var(--nn-dark-bg));
+    --dark-shadow-first: color-mix(in srgb, var(--nn-dark-bg), #000 calc(var(--nn-dark-shadow-strength) * 1%));
+    --dark-shadow-second: color-mix(in srgb, var(--nn-dark-highlight) calc(var(--nn-dark-highlight-mix) * 1%), var(--nn-dark-bg));
     --dark-shadow-third: #000000;
     --dark-shadow-fourth: color-mix(in srgb, var(--nn-dark-bg) 65%, #fff);
 

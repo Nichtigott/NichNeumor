@@ -91,6 +91,8 @@
 
 改背景色、强度、距离和模糊，所有面板、按钮、标题栏阴影都会用 `color-mix()` 自动重新生成，不需要手写阴影颜色。
 
+启用 [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) 插件后，可以在 **设置 → Style Settings → NichNeumor Palette** 里用图形界面调：底色/高光是取色器，强度、距离、模糊是滑杆，改完即时生效。
+
 示例——柔和中性灰配色：
 
 ```css

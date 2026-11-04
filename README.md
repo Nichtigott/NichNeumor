@@ -92,6 +92,8 @@ Colours and neumorphic shadows are generated from a small palette block at the t
 
 Change the backgrounds and the intensity/distance values and every panel, button and titlebar shadow is regenerated with `color-mix()` — no manual shadow colours needed.
 
+If the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin is enabled, the same controls are available as a GUI: **Settings → Style Settings → NichNeumor Palette** (colour pickers for the base colours/highlights, sliders for intensity, distance and blur).
+
 Example — soft neutral grey scheme:
 
 ```css
