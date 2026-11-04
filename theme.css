@@ -28,6 +28,20 @@ settings:
         type: heading
         level: 2
     -
+        id: nn-shadow-style
+        title: 阴影方向 / Shadow direction
+        description: 凸起或凹陷（和 neumorphism.io 的 pressed 模式一样）
+        type: class-select
+        allowEmpty: false
+        default: nn-raised
+        options:
+            -
+                label: 凸起 / Raised
+                value: nn-raised
+            -
+                label: 凹陷 / Inset
+                value: nn-inset
+    -
         id: nn-light-shadow-strength
         title: 亮色阴影强度 / Light shadow intensity (%)
         type: variable-number-slider
@@ -306,6 +320,18 @@ body {
         --light-shadow-second: rgb(from var(--nn-light-bg) clamp(0, calc(r * var(--nn-light-shadow-factor)), 255) clamp(0, calc(g * var(--nn-light-shadow-factor)), 255) clamp(0, calc(b * var(--nn-light-shadow-factor)), 255));
         --dark-shadow-second: rgb(from var(--nn-dark-bg) clamp(0, calc(r * var(--nn-dark-shadow-factor)), 255) clamp(0, calc(g * var(--nn-dark-shadow-factor)), 255) clamp(0, calc(b * var(--nn-dark-shadow-factor)), 255));
     }
+}
+
+/* inset (pressed) shadow mode */
+body.nn-inset {
+    --box-shadow: inset var(--nn-distance) var(--nn-distance) var(--nn-blur) light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
+                 inset calc(-1 * var(--nn-distance)) calc(-1 * var(--nn-distance)) var(--nn-blur) light-dark(var(--light-shadow-second), var(--dark-shadow-second));
+    --button-box-shadow: inset var(--nn-button-distance) var(--nn-button-distance) var(--nn-button-blur) light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
+                 inset calc(-1 * var(--nn-button-distance)) calc(-1 * var(--nn-button-distance)) var(--nn-button-blur) light-dark(var(--light-shadow-second), var(--dark-shadow-second));
+    --box-shadow-click: inset calc(-1 * var(--nn-distance)) calc(-1 * var(--nn-distance)) var(--nn-blur) light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
+                 inset var(--nn-distance) var(--nn-distance) var(--nn-blur) light-dark(var(--light-shadow-second), var(--dark-shadow-second));
+    --button-box-shadow-click: inset calc(-1 * var(--nn-button-distance)) calc(-1 * var(--nn-button-distance)) var(--nn-button-blur) light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
+                 inset var(--nn-button-distance) var(--nn-button-distance) var(--nn-button-blur) light-dark(var(--light-shadow-second), var(--dark-shadow-second));
 }
 
 /* === setting menu === */
