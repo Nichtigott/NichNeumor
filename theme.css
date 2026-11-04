@@ -1738,6 +1738,12 @@ body.is-popout-modal .modal.mod-sidebar-layout .modal-content {
 
 /* === Style Settings plugin UI === */
 
+/* the plugin's own filter/import bar duplicates Obsidian's settings search */
+.modal.mod-settings .setting-item:has(.style-settings-import) {
+    display: none !important;
+}
+
+
 /* one card per collapsible group, rows stay flat (like the native settings tab) */
 .modal.mod-settings .style-settings-container:has(> .setting-item:not(.setting-item-heading)) {
     background-color: var(--background) !important;
