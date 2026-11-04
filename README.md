@@ -70,6 +70,38 @@ The theme fully supports all standard Markdown syntax elements:
 
 ![](./Picture/swappy-20251008_234204.png)
 
+### Custom Palette
+
+Colours and neumorphic shadows are generated from a small palette block at the top of `theme.css` (`=== PALETTE ===`), modelled after [neumorphism.io](https://neumorphism.io):
+
+```css
+--nn-light-bg: #dbd1c6;          /* light background */
+--nn-dark-bg: #1a1b20;           /* dark background */
+--nn-light-highlight: #fdf4e8;   /* light-mode highlight tint */
+--nn-dark-highlight: #f4f9f4;
+--nn-light-shadow-strength: 15%; /* shadow intensity (light) */
+--nn-dark-shadow-strength: 60%;  /* shadow intensity (dark) */
+--nn-light-highlight-mix: 85%;
+--nn-dark-highlight-mix: 8%;
+
+--nn-distance: 4px;              /* panel shadow offset */
+--nn-blur: 8px;                  /* panel shadow blur */
+--nn-button-distance: 2px;       /* button shadow offset */
+--nn-button-blur: 4px;
+```
+
+Change the backgrounds and the intensity/distance values and every panel, button and titlebar shadow is regenerated with `color-mix()` — no manual shadow colours needed.
+
+Example — soft neutral grey scheme:
+
+```css
+--nn-light-bg: #e0e0e0;
+--nn-light-highlight: #ffffff;
+--nn-distance: 10px;
+--nn-blur: 24px;
+```
+
+
 ## Technical Features
 
 - **Responsive Design**: Adapts to various screen sizes

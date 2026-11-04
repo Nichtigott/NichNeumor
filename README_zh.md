@@ -69,6 +69,38 @@
 
 ![](./Picture/swappy-20251008_234204.png)
 
+### 自定义配色 / Custom Palette
+
+颜色和拟物阴影都由 `theme.css` 顶部的 `=== PALETTE ===` 区块生成（思路参考 [neumorphism.io](https://neumorphism.io)）：
+
+```css
+--nn-light-bg: #dbd1c6;          /* 亮色背景 */
+--nn-dark-bg: #1a1b20;           /* 暗色背景 */
+--nn-light-highlight: #fdf4e8;   /* 亮色高光色调 */
+--nn-dark-highlight: #f4f9f4;
+--nn-light-shadow-strength: 15%; /* 阴影强度（亮色） */
+--nn-dark-shadow-strength: 60%;  /* 阴影强度（暗色） */
+--nn-light-highlight-mix: 85%;
+--nn-dark-highlight-mix: 8%;
+
+--nn-distance: 4px;              /* 大面板阴影偏移 */
+--nn-blur: 8px;                  /* 大面板阴影模糊 */
+--nn-button-distance: 2px;       /* 小按钮阴影偏移 */
+--nn-button-blur: 4px;
+```
+
+改背景色、强度、距离和模糊，所有面板、按钮、标题栏阴影都会用 `color-mix()` 自动重新生成，不需要手写阴影颜色。
+
+示例——柔和中性灰配色：
+
+```css
+--nn-light-bg: #e0e0e0;
+--nn-light-highlight: #ffffff;
+--nn-distance: 10px;
+--nn-blur: 24px;
+```
+
+
 ## 技术特性 / Technical Features
 
 - **响应式设计**：适配不同屏幕尺寸
