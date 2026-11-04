@@ -11,16 +11,14 @@ settings:
     -
         id: nn-light-bg
         title: 亮色背景 / Light background
-        description: 只影响亮色模式 / light theme only
-        type: variable-color
-        format: hex
+        description: 支持 #hex / rgb() / hsl() / oklch()
+        type: variable-text
         default: '#dbd1c6'
     -
         id: nn-dark-bg
         title: 暗色背景 / Dark background
-        description: 只影响暗色模式 / dark theme only
-        type: variable-color
-        format: hex
+        description: 支持 #hex / rgb() / hsl() / oklch()
+        type: variable-text
         default: '#1a1b20'
     -
         id: nn-accents
@@ -30,50 +28,50 @@ settings:
     -
         id: nn-red
         title: 红 / Red
-        type: variable-color
-        format: hex
+        description: #hex / rgb() / hsl() / oklch()
+        type: variable-text
         default: '#bf616a'
     -
         id: nn-orange
         title: 橙 / Orange
-        type: variable-color
-        format: hex
+        description: #hex / rgb() / hsl() / oklch()
+        type: variable-text
         default: '#d08770'
     -
         id: nn-yellow
         title: 黄 / Yellow
-        type: variable-color
-        format: hex
+        description: #hex / rgb() / hsl() / oklch()
+        type: variable-text
         default: '#c4963a'
     -
         id: nn-green
         title: 绿 / Green
-        type: variable-color
-        format: hex
+        description: #hex / rgb() / hsl() / oklch()
+        type: variable-text
         default: '#8aa176'
     -
         id: nn-cyan
         title: 青 / Cyan
-        type: variable-color
-        format: hex
+        description: #hex / rgb() / hsl() / oklch()
+        type: variable-text
         default: '#70a9a8'
     -
         id: nn-blue
         title: 蓝 / Blue
-        type: variable-color
-        format: hex
+        description: #hex / rgb() / hsl() / oklch()
+        type: variable-text
         default: '#81a1c1'
     -
         id: nn-purple
         title: 紫 / Purple
-        type: variable-color
-        format: hex
+        description: #hex / rgb() / hsl() / oklch()
+        type: variable-text
         default: '#b48ead'
     -
         id: nn-pink
         title: 粉 / Pink
-        type: variable-color
-        format: hex
+        description: #hex / rgb() / hsl() / oklch()
+        type: variable-text
         default: '#b0748f'
     -
         id: nn-shadows
@@ -1782,40 +1780,8 @@ body.is-popout-modal .modal.mod-sidebar-layout .modal-content {
 }
 
 /* Pickr swatch + popup */
-.modal.mod-settings .setting-item:has(.pcr-app.visible) {
-    position: relative;
-    z-index: 20;
-}
 
-.pcr-button {
-    border-radius: var(--border-radius) !important;
-    border: none !important;
-    box-shadow: var(--button-box-shadow) !important;
-}
 
-.pcr-button:hover {
-    box-shadow: var(--button-box-shadow-click) !important;
-}
 
-.pcr-app {
-    z-index: 1000 !important;
-    background: var(--background) !important;
-    border-radius: var(--border-radius) !important;
-    border: none !important;
-    box-shadow: var(--box-shadow) !important;
-    color: var(--color-base-100) !important;
-}
 
-.pcr-app .pcr-result {
-    background: var(--background) !important;
-    color: var(--color-base-100) !important;
-    border: none !important;
-    border-radius: 8px !important;
-    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3) !important;
-}
 
-.pcr-app .pcr-save,
-.pcr-app .pcr-cancel,
-.pcr-app .pcr-close {
-    border-radius: 8px !important;
-}
