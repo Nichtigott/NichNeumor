@@ -1435,7 +1435,8 @@ body.is-popout-modal .modal.mod-sidebar-layout .modal-content {
 .workspace-split.mod-horizontal.mod-sidedock .workspace-tab-header-container .workspace-tab-header:hover .workspace-tab-header-inner,
 .workspace-split.mod-horizontal.mod-sidedock .workspace-tab-header-container .workspace-tab-header.is-active .workspace-tab-header-inner {
     background-color: var(--background-modifier-hover) !important;
-    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.22) !important;
+    box-shadow: inset 3px 3px 7px light-dark(var(--light-shadow-first), var(--dark-shadow-first)),
+                inset -3px -3px 7px light-dark(var(--light-shadow-second), var(--dark-shadow-second)) !important;
 }
 
 /* Excalidraw side toolbar buttons: rounded corners + inset hover */
