@@ -91,7 +91,7 @@ Colours and neumorphic shadows are generated from a small palette block at the t
 
 Change the two backgrounds (and optionally the intensity / distance / blur) and every panel, button, active tab and titlebar shadow is regenerated — there is no shadow colour to pick.
 
-If the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin is enabled, the same controls are available as a GUI: **Settings -> Style Settings -> NichNeumor Palette** (two colour pickers, sliders for intensity / distance / blur).
+If the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin is enabled, the same options are also available as a GUI (two backgrounds + eight accent colours + shadow strength / distance / blur) — see "Using the Style Settings Plugin" below.
 
 The whole Obsidian colour scale (`--color-base-*`: text, borders, selected items, inputs) is derived from the two backgrounds as well, so a new background colour recolours the entire theme instead of just the page behind the panels. The Style Settings controls themselves use the same neumorphic styling.
 
@@ -102,6 +102,33 @@ Example — soft neutral grey scheme:
 --nn-distance: 10px;
 --nn-blur: 24px;
 ```
+
+### Using the Style Settings Plugin
+
+[Style Settings](https://github.com/mgmeyers/obsidian-style-settings) is a separate community plugin by mgmeyers — it is **not** bundled with the theme. The theme works without it (defaults live in `theme.css`); with it enabled you can recolour and re-tune everything from a GUI.
+
+**Install and open**
+
+1. `Settings → Community plugins → Browse`, search for **Style Settings** (by mgmeyers), install and enable it;
+2. `Settings → Style Settings → NichNeumor Palette`.
+
+**What you can change**
+
+- **Backgrounds** — light background and dark background, both text fields. Any CSS colour works: `#bf616a`, `rgb(191 97 106)`, `hsl(354 30% 64%)`, `oklch(0.75 0.09 20)`, `rebeccapurple`…;
+- **Accent colours** — red / orange / yellow / green / cyan / blue / purple / pink. One field per colour, applied to both light and dark themes;
+- **Shadows** — light/dark shadow intensity, panel shadow distance/blur, button shadow distance/blur (sliders).
+
+**How it applies**
+
+- A colour is applied when you press `Enter` or click outside the field; the field always shows the value currently in use;
+- The whole `--color-base-*` scale (text, borders, selections, inputs) and every shadow are derived from the background colour, using the same maths as [neumorphism.io](https://neumorphism.io) — there is no shadow colour to pick;
+- Invalid or out-of-range values fall back to the theme defaults (registered with `@property`).
+
+**Reset**
+
+Clear a field (or enter an invalid value) to fall back to the default, or remove the saved override in `.obsidian/plugins/obsidian-style-settings/data.json` (keys starting with `nichneumor-palette@@`).
+
+> The theme hides Style Settings' own search / import / export row because Obsidian's built-in settings search already covers it. If you need import/export, switch to another theme temporarily, or edit `data.json` directly.
 
 ## Technical Features
 

@@ -90,7 +90,7 @@
 
 只改两个背景色（需要的话再加强度/距离/模糊），所有面板、按钮、选中 tab、标题栏的阴影都会自动重算，不需要手选阴影颜色。
 
-启用 [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) 插件后，可以在 **设置 → Style Settings → NichNeumor Palette** 里用图形界面调：两个取色器 + 强度/距离/模糊滑杆。
+启用 [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) 插件后，同样的项目也可以全部在图形界面里调（背景色 + 8 个语义色 + 阴影强度/距离/模糊），见下面的「使用 Style Settings 插件」。
 
 Obsidian 的整套 `--color-base-*`（文字、边框、选中项、输入框等）也会从这两个背景色按比例推导，所以换底色会整体换掉主题配色，而不只是面板后面的页面。Style Settings 的控件本身也套用了同样的拟物样式。
 
@@ -101,6 +101,33 @@ Obsidian 的整套 `--color-base-*`（文字、边框、选中项、输入框等
 --nn-distance: 10px;
 --nn-blur: 24px;
 ```
+
+### 使用 Style Settings 插件 / Using the Style Settings Plugin
+
+[Style Settings](https://github.com/mgmeyers/obsidian-style-settings) 是 mgmeyers 的独立社区插件，**不包含在主题包里**。不装它主题也能正常用（默认值写在 `theme.css` 里）；装了之后可以在图形界面里重新配色、调阴影。
+
+**安装与打开**
+
+1. `设置 → 第三方插件 → 浏览`，搜索 **Style Settings**（作者 mgmeyers），安装并启用；
+2. `设置 → Style Settings → NichNeumor Palette`。
+
+**可以调什么**
+
+- **背景**：亮色背景、暗色背景，都是文本输入框。支持任意 CSS 颜色：`#bf616a`、`rgb(191 97 106)`、`hsl(354 30% 64%)`、`oklch(0.75 0.09 20)`、`rebeccapurple` 等；
+- **语义色**：红 / 橙 / 黄 / 绿 / 青 / 蓝 / 紫 / 粉，每个颜色一个输入框，同时作用于亮色和暗色主题；
+- **阴影**：亮色/暗色阴影强度、大面板阴影距离/模糊、按钮阴影距离/模糊（滑杆）。
+
+**生效方式**
+
+- 颜色输入后按回车、或点别处即生效；输入框里始终显示当前实际在用的值；
+- 整套 `--color-base-*`（文字、边框、选中项、输入框等）和所有阴影都由背景色自动推导，算法同 [neumorphism.io](https://neumorphism.io)，没有「阴影颜色」需要手选；
+- 输入非法或越界值会回退到默认值（用 `@property` 注册兜底）。
+
+**恢复默认**
+
+清空某项（或输入非法值）会回退默认；也可以删除插件保存的覆盖项——`.obsidian/plugins/obsidian-style-settings/data.json` 里以 `nichneumor-palette@@` 开头的条目。
+
+> 主题隐藏了 Style Settings 自带的「搜索 / 导入 / 导出」那一行（与 Obsidian 自带设置搜索重复）。需要导入/导出时，可以临时切到别的主题操作，或直接编辑上面提到的 `data.json`。
 
 ## 技术特性 / Technical Features
 

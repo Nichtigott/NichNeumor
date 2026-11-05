@@ -700,7 +700,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 }
 
 .excalidraw .App-toolbar-content {
-    gap: 8px !important;
+    gap: 10px !important;
 }
 
 .excalidraw .default-sidebar .sidebar-triggers {
@@ -850,7 +850,9 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 }
 
 .excalidraw .mobile-misc-tools-container .ToolIcon {
-    box-shadow: none !important;
+    width: 43px !important;
+    height: 43px !important;
+    box-shadow: var(--button-box-shadow) !important;
 }
 
 .excalidraw .mobile-misc-tools-container .ToolIcon:hover {
@@ -858,7 +860,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 }
 
 .excalidraw .mobile-misc-tools-container .ToolIcon__icon {
-    box-shadow: var(--button-box-shadow) !important;
+    box-shadow: none !important;
     border-radius: var(--border-radius) !important;
 }
 
@@ -907,11 +909,13 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 /* breathing room between the tool keys and the toolbar card edge */
 .excalidraw .App-toolbar {
     padding: 8px !important;
+    box-shadow: none !important;
 }
 
 /* every tool key should be the same square footprint as the Image & Files
    control, not the flat half-height buttons Excalidraw defaults to */
 .excalidraw .App-toolbar .ToolIcon {
+    width: 43px !important;
     height: 43px !important;
 }
 
@@ -942,7 +946,16 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 }
 
 .excalidraw .Stack_horizontal {
-    gap: 10px !important;
+    gap: 12px !important;
+}
+
+.excalidraw .RadioGroup {
+    gap: 6px !important;
+    padding: 5px !important;
+}
+
+.excalidraw .buttonList {
+    gap: 6px !important;
 }
 
 .excalidraw .layer-ui__wrapper .layer-ui__wrapper__footer-left>* {
@@ -982,7 +995,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 
 .excalidraw .ToolIcon_type_button {
     padding: 5px !important;
-    box-shadow: none !important;
+    box-shadow: var(--button-box-shadow) !important;
 }
 
 .excalidraw .ToolIcon .ToolIcon__icon,
