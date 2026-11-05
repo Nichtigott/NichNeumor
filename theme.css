@@ -897,6 +897,13 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
     border-radius: var(--border-radius) !important;
 }
 
+/* the library panel docks to the right page edge: no gap on the right and
+   square right corners, like the side dock */
+.excalidraw .sidebar.default-sidebar {
+    margin: 10px 0 10px 10px !important;
+    border-radius: var(--border-radius) 0 0 var(--border-radius) !important;
+}
+
 /* breathing room between the tool keys and the toolbar card edge */
 .excalidraw .App-toolbar {
     padding: 8px !important;
