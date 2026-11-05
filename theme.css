@@ -556,6 +556,13 @@ button:not(.clickable-icon):hover {
     box-shadow: var(--button-box-shadow-click)important;
 }
 
+/* grouped buttons (segmented toggles in settings and plugin panels) need a gap,
+   otherwise their neumorphic shadows bleed into each other */
+.modal button:not(.clickable-icon) + button:not(.clickable-icon),
+.vertical-tab-content button:not(.clickable-icon) + button:not(.clickable-icon) {
+    margin-inline-start: 6px !important;
+}
+
 .checkbox-container {
     box-shadow: var(--box-shadow) !important;
 }
@@ -837,8 +844,9 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 }
 
 .excalidraw .mobile-misc-tools-container {
-    padding: 5px 6px 5px 5px !important;
+    padding: 6px !important;
     gap: 8px !important;
+    overflow: visible !important;
 }
 
 .excalidraw .mobile-misc-tools-container .ToolIcon {
@@ -887,6 +895,11 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
     background-color: var(--background) !important;
     box-shadow: var(--box-shadow) !important;
     border-radius: var(--border-radius) !important;
+}
+
+/* breathing room between the tool keys and the toolbar card edge */
+.excalidraw .App-toolbar {
+    padding: 8px !important;
 }
 
 .excalidraw .dropdown-menu {
@@ -974,10 +987,13 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 /*=== excalidraw sidebar trigger ===*/
 
 .excalidraw .mobile-misc-tools-container .default-sidebar-trigger {
-    padding: 5px !important;
+    width: 48px !important;
+    height: 48px !important;
+    padding: 0 !important;
     margin: 0 !important;
-    box-shadow: none !important;
-    background: none !important;
+    border-radius: var(--border-radius) !important;
+    background-color: var(--background) !important;
+    box-shadow: var(--button-box-shadow) !important;
 }
 
 .excalidraw .mobile-misc-tools-container .default-sidebar-trigger:hover {
@@ -1731,6 +1747,23 @@ body.is-popout-modal .modal.mod-sidebar-layout .modal-content {
     box-shadow: none !important;
     background-color: transparent !important;
     border-radius: 0 !important;
+}
+
+/* the label button is the actual flex item inside the side strip — give it the
+   same footprint as the other icon buttons so the last trigger is not clipped
+   by the container and sits a uniform margin away from its edges */
+.excalidraw .mobile-misc-tools-container > .sidebar-trigger__label-element {
+    width: 48px !important;
+    height: 48px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: var(--border-radius) !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 
