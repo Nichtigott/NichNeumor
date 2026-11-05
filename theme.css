@@ -869,7 +869,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 .excalidraw .mobile-misc-tools-container {
     border: 0px !important;
     box-shadow: var(--button-box-shadow) !important;
-    border-radius: var(--border-radius) !important;
+    border-radius: var(--border-radius) 0 0 var(--border-radius) !important;
     background-color: var(--background) !important;
 }
 
@@ -900,6 +900,12 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 /* breathing room between the tool keys and the toolbar card edge */
 .excalidraw .App-toolbar {
     padding: 8px !important;
+}
+
+/* every tool key should be the same square footprint as the Image & Files
+   control, not the flat half-height buttons Excalidraw defaults to */
+.excalidraw .App-toolbar .ToolIcon {
+    height: 43px !important;
 }
 
 .excalidraw .dropdown-menu {
@@ -989,11 +995,11 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 .excalidraw .mobile-misc-tools-container .default-sidebar-trigger {
     width: 48px !important;
     height: 48px !important;
-    padding: 0 !important;
+    padding: 5px !important;
     margin: 0 !important;
-    border-radius: var(--border-radius) !important;
-    background-color: var(--background) !important;
-    box-shadow: var(--button-box-shadow) !important;
+    border-radius: var(--border-radius);
+    background: none !important;
+    box-shadow: none !important;
 }
 
 .excalidraw .mobile-misc-tools-container .default-sidebar-trigger:hover {
