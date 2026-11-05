@@ -1039,35 +1039,6 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
     box-shadow: var(--button-box-shadow-click);
 }
 
-/* === graph view === */
-
-/* Obsidian renders the whole graph into one <canvas>, so the glass-bead look
-   here is an approximation: translucent bead colours plus a canvas-wide drop
-   shadow that reads as a rim light (top-left) and a cast shadow (bottom). */
-.workspace-leaf-content[data-type="graph"] canvas {
-    filter:
-        drop-shadow(0 -1px 0 rgba(255, 255, 255, 0.22))
-        drop-shadow(0 2px 3px rgba(0, 0, 0, 0.55));
-}
-
-body.theme-dark {
-    --graph-node: rgb(205 218 240 / 62%);
-    --graph-node-tag: rgb(205 180 255 / 62%);
-    --graph-node-attachment: rgb(160 205 255 / 62%);
-    --graph-node-unresolved: rgb(170 182 200 / 42%);
-    --graph-node-focused: rgb(238 232 255 / 88%);
-    --graph-line: rgb(150 165 190 / 26%);
-}
-
-body.theme-light {
-    --graph-node: rgb(92 84 74 / 55%);
-    --graph-node-tag: rgb(118 94 160 / 55%);
-    --graph-node-attachment: rgb(66 108 150 / 55%);
-    --graph-node-unresolved: rgb(120 110 100 / 35%);
-    --graph-node-focused: rgb(78 58 118 / 80%);
-    --graph-line: rgb(70 60 50 / 26%);
-}
-
 /* === code block === */
 
 .markdown-source-view.mod-cm6 .code-block-flair {
